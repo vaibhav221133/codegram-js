@@ -1,0 +1,53 @@
+{
+  "name": "codegram-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "build": "echo 'No build step required for JavaScript. Consider using a linter/bundler if needed.'",
+    "start": "node dist/server.js",
+    "start:prod": "NODE_ENV=production node dist/server.js",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:migrate:prod": "prisma migrate deploy",
+    "db:seed": "node prisma/seed.js",
+    "swagger:gen": "node swagger.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.7.0",
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.7.0",
+    "connect-pg-simple": "^10.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "dotenv-safe": "^8.2.0",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.3.1",
+    "express-session": "^1.17.3",
+    "helmet": "^7.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "marked": "^11.1.0",
+    "multer": "^2.0.2",
+    "node-cron": "^3.0.3",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
+    "sharp": "^0.33.1",
+    "socket.io": "^4.7.5",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.1",
+    "winston": "^3.11.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "prisma": "^5.7.0",
+    "redoc-cli": "^0.13.21"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  }
+}
